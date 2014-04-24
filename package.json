@@ -1,0 +1,27 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "config": "^0.4.35",
+    "express": "~4.0.0",
+    "mongoose": "^3.8.8",
+    "morgan": "~1.0.0",
+    "node-require-directory": "^1.0.2",
+    "yaml": "^0.2.3"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.18.2",
+    "supertest": "^0.11.0"
+  },
+  "jshintConfig": {
+    "unused": true,
+    "node": true
+  }
+}

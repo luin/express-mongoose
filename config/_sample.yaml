@@ -1,0 +1,3 @@
+mongodb:
+  host: localhost
+  database: test
