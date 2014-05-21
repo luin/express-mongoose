@@ -6,6 +6,7 @@
     "test": "mocha"
   },
   "dependencies": {
+    "bcrypt": "^0.7.8",
     "body-parser": "~1.0.0",
     "config": "^0.4.35",
     "express": "~4.0.0",
