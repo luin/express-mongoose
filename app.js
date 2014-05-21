@@ -1,4 +1,5 @@
 var express = require('express');
+require('express-di');
 
 var app = module.exports = express();
 
@@ -8,6 +9,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
+require('./factories')(app);
 require('./routes')(app);
 require('./models');
 
