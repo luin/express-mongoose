@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
+var config = require('config');
 
 var schema = module.exports = new mongoose.Schema({
   username: { type: String, unique: true },
@@ -12,7 +13,7 @@ schema.pre('save', function(next) {
   var self = this;
 
   if (!self.isModified('password')) return next();
-  bcrypt.hash(self.password, $config.bcrypt.rounds, function(err, hash) {
+  bcrypt.hash(self.password, config.bcrypt.rounds, function(err, hash) {
     if (err) return next(err);
     self.password = hash;
     next();
@@ -32,4 +33,3 @@ schema.options.toJSON.transform = function (doc, ret) {
   ret.id = ret._id;
   delete ret._id;
 };
-
